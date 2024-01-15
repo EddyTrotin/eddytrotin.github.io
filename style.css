@@ -1,0 +1,51 @@
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  font-family: "Open Sans", sans-serif;
+  font-size: 48px;
+}
+
+body>div {
+  background-image: url('./banner.png');
+  background-size: cover;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
+body>div>div {
+  display: flex;
+}
+
+h1,
+h4 {
+  margin: 0;
+  color: white;
+  text-align: center;
+}
+
+h4 {
+  font-weight: 300;
+}
+
+a {
+  border-radius: 100%;
+  margin-left: 16px;
+  margin-right: 16px;
+}
+
+a:hover {
+  background: linear-gradient(to bottom, #615cfd 0%, #d465ef 100%);
+  cursor: pointer;
+}
+
+a>img {
+  display: flex;
+  height: 48px;
+  padding: 12px;
+}
