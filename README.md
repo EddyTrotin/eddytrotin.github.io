@@ -1,6 +1,6 @@
 # Portfolio 2025
 
-A modern, responsive portfolio website built with Next.js, React, TypeScript, and Tailwind CSS. Features multi-language support (English/French), smooth animations, and a beautiful gradient design.
+Personal porfolio built with Next.js, React, TypeScript, and Tailwind CSS. Features multi-language support (English/French), smooth animations, and a beautiful gradient design.
 
 ## Table of Contents
 
@@ -12,6 +12,8 @@ A modern, responsive portfolio website built with Next.js, React, TypeScript, an
 - [Static Site Generation](#static-site-generation)
 - [Configuration](#configuration)
 - [Deployment](#deployment)
+  - [GitHub Pages (Automated)](#github-pages-automated-deployment)
+  - [Alternative Platforms](#quick-deploy-options-alternative-platforms)
 
 ## Features
 
@@ -280,7 +282,7 @@ sudo systemctl restart apache2
 
 Simply upload the `out/` directory or connect your Git repository:
 
-- **GitHub Pages**: Push `out/` to `gh-pages` branch
+- **GitHub Pages**: See the [GitHub Pages Deployment](#github-pages-automated-deployment) section below for detailed automated and manual deployment instructions
 - **Netlify**: Drag and drop `out/` folder or connect Git repo with build command `npm run build`
 - **Vercel**: Connect Git repo (auto-detects Next.js)
 
@@ -309,7 +311,80 @@ Edit `src/config/translations.ts`:
 
 ## Deployment
 
-### Quick Deploy Options
+### GitHub Pages (Automated Deployment)
+
+This project includes a GitHub Actions workflow (`.github/workflows/deploy.yml`) for automatic deployment to GitHub Pages.
+
+#### Setup Steps:
+
+1. **Push your code to GitHub**:
+   ```bash
+   git add .
+   git commit -m "Configure for GitHub Pages"
+   git push origin main
+   ```
+
+2. **Enable GitHub Pages**:
+   - Go to your repository on GitHub
+   - Navigate to **Settings** → **Pages**
+   - Under **Source**, select **GitHub Actions**
+   - Save the settings
+
+3. **Automatic Deployment**:
+   - Every push to `main` branch automatically triggers a build and deployment
+   - Check the **Actions** tab to monitor deployment progress
+   - Your site will be available at: `https://yourusername.github.io/repository-name/`
+
+#### Manual GitHub Pages Deployment:
+
+If you prefer manual deployment:
+
+```bash
+# Build the static site
+npm run build
+
+# Deploy using gh-pages package
+npm install -D gh-pages
+npx gh-pages -d out
+```
+
+Or using Git directly:
+
+```bash
+cd out
+git init
+git add .
+git commit -m "Deploy to GitHub Pages"
+git branch -M gh-pages
+git remote add origin https://github.com/yourusername/repository-name.git
+git push -f origin gh-pages
+```
+
+Then in GitHub repository settings:
+- Go to **Settings** → **Pages**
+- Under **Source**, select **Deploy from a branch**
+- Select **gh-pages** branch and **/ (root)** folder
+- Save
+
+#### Important: Subdirectory vs Root Domain
+
+**If deploying to a subdirectory** (e.g., `username.github.io/portfolio-2025`):
+
+Update `next.config.ts`:
+```typescript
+const nextConfig: NextConfig = {
+  output: 'export',
+  images: { unoptimized: true },
+  basePath: '/portfolio-2025',      // Add your repo name
+  assetPrefix: '/portfolio-2025',   // Add your repo name
+};
+```
+
+**If deploying to root domain** (e.g., `username.github.io`):
+- Keep the config as is (no basePath needed)
+- Repository name must be `username.github.io`
+
+### Quick Deploy Options (Alternative Platforms)
 
 1. **Vercel** (Recommended - Zero Config):
    ```bash
@@ -320,12 +395,7 @@ Edit `src/config/translations.ts`:
 2. **Netlify**:
    - Build command: `npm run build`
    - Publish directory: `out`
-
-3. **GitHub Pages**:
-   ```bash
-   npm run build
-   # Push 'out' directory to gh-pages branch
-   ```
+   - Or drag and drop the `out/` folder to Netlify
 
 ### SSL/HTTPS Setup (Nginx)
 
