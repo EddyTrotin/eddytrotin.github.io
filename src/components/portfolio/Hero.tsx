@@ -56,7 +56,7 @@ export default function Hero({ onNavigate }: HeroProps) {
         >
           <button
             onClick={() => onNavigate('projects')}
-            className="group relative px-6 py-3 sm:px-8 sm:py-4 bg-gradient-to-r from-cyan-500 to-purple-600 rounded-full font-semibold overflow-hidden text-sm sm:text-base"
+            className="group relative px-6 py-3 sm:px-8 sm:py-4 bg-gradient-to-r from-cyan-500 to-purple-600 rounded-full font-semibold overflow-hidden text-sm sm:text-base cursor-pointer"
           >
             <span className="relative z-10 flex items-center justify-center gap-2 cursor-pointer">
               {t.buttons.viewMyWork}
