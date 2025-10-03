@@ -1,6 +1,7 @@
 import React from 'react';
 import { ArrowRight } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
+import RotatingText from './RotatingText';
 
 interface HeroProps {
   onNavigate: (sectionId: string) => void;
@@ -18,19 +19,27 @@ export default function Hero({ onNavigate }: HeroProps) {
         </div>
 
         {/* Main Heading */}
-        <h1 className="text-6xl md:text-8xl font-bold mb-6 leading-tight">
-          <span className="inline-block animate-slide-up">
+        <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-tight">
+          <div className="animate-slide-up">
             {t.personal.tagline.prefix}
-          </span>
-          <br />
-          <span 
-            className="inline-block animate-slide-up" 
+          </div>
+          <div 
+            className="animate-slide-up overflow-hidden" 
+            style={{ animationDelay: '0.1s' }}
+          >
+            <RotatingText 
+              words={t.personal.tagline.rotating}
+              className="bg-white bg-clip-text text-transparent font-bold"
+            />
+          </div>
+          <div 
+            className="animate-slide-up" 
             style={{ animationDelay: '0.2s' }}
           >
             <span className="bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 bg-clip-text text-transparent animate-gradient">
-              {t.personal.tagline.highlight}
+              {t.personal.tagline.suffix}
             </span>
-          </span>
+          </div>
         </h1>
 
         <p 
