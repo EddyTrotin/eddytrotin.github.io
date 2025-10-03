@@ -13,9 +13,9 @@ export const portfolioConfig = {
       suffix: 'Systems'
     },
     stats: {
-      projectsCompleted: '100+',
+      projectsCompleted: '40+',
       yearsExperience: '10+',
-      clientSatisfaction: '98%'
+      clientSatisfaction: '100%'
     },
     bio: {
       intro: 'I build full-stack systems that scale. Over the past 10 years, I\'ve shipped **production applications** for startups to **world-class companies**, working across the entire stack—from database architecture to user interfaces. I write **clean, maintainable code** and believe the best solutions come from understanding both the technical requirements and the business context.',
@@ -132,7 +132,7 @@ export const portfolioConfig = {
 
   // Footer
   footer: {
-    copyright: '© 2025 Eddy Trotin. Built with TypeScript & caffeine.'
+    copyright: 'Eddy Trotin'
   }
 };
 

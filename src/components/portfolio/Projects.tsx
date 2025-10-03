@@ -78,10 +78,10 @@ export default function Projects() {
                 </div>
 
                 {/* Link */}
-                <button className="flex items-center gap-2 text-cyan-400 group-hover:gap-4 transition-all cursor-pointer">
+                {/* <button className="flex items-center gap-2 text-cyan-400 group-hover:gap-4 transition-all cursor-pointer">
                   {t.projects.viewProject}
                   <ExternalLink size={16} />
-                </button>
+                </button> */}
               </div>
 
               {/* Hover Glow */}

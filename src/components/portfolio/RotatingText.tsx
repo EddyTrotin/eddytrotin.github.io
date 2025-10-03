@@ -21,8 +21,8 @@ export default function RotatingText({ words, interval = 3000, className = '' }:
   const longestWord = words.reduce((a, b) => a.length > b.length ? a : b, '');
 
   return (
-    <span className="relative inline-block" style={{ minHeight: '1em' }}>
-      <span className={`invisible ${className}`} aria-hidden="true">
+    <span className="relative inline-block mx-auto" style={{ minHeight: '1em' }}>
+      <span className={`invisible whitespace-nowrap ${className}`} aria-hidden="true">
         {longestWord}
       </span>
       {words.map((word, index) => (
@@ -30,7 +30,7 @@ export default function RotatingText({ words, interval = 3000, className = '' }:
           key={index}
           className={`
             ${className}
-            absolute left-0 top-0 right-0 text-center whitespace-nowrap
+            absolute left-1/2 top-0 -translate-x-1/2 whitespace-nowrap
             transition-all duration-500 ease-in-out
             ${index === currentIndex 
               ? 'opacity-100 translate-y-0' 

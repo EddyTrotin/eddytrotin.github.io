@@ -24,7 +24,7 @@ export default function Hero({ onNavigate }: HeroProps) {
             {t.personal.tagline.prefix}
           </div>
           <div 
-            className="animate-slide-up overflow-hidden" 
+            className="animate-slide-up" 
             style={{ animationDelay: '0.1s' }}
           >
             <RotatingText 

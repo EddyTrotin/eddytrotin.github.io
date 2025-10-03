@@ -10,16 +10,16 @@ export const translations = {
       availability: 'Open to new opportunities',
       tagline: {
         prefix: 'Building',
-        rotating: ['Scalable', 'Innovative', 'Production-Ready', 'Enterprise-Grade', 'Robust', 'Modern'],
-        suffix: 'Solutions'
+        rotating: ['Scalable', 'Innovative', 'Production-Ready', 'Robust', 'Modern'],
+        suffix: 'Systems'
       },
       stats: {
-        projectsCompleted: '100+',
+        projectsCompleted: '40+',
         projectsLabel: 'Projects Completed',
         yearsExperience: '10+',
         yearsLabel: 'Years Experience',
-        clientSatisfaction: '98%',
-        satisfactionLabel: 'Client Satisfaction'
+        clientSatisfaction: '100%',
+        satisfactionLabel: 'Passionate'
       },
       bio: {
         heading: 'AI & Full Stack Engineer',
@@ -125,7 +125,7 @@ export const translations = {
 
     // Footer
     footer: {
-      copyright: '© 2025 Eddy Trotin. Built with TypeScript & caffeine.'
+      copyright: 'Eddy Trotin'
     }
   },
 
@@ -134,25 +134,25 @@ export const translations = {
     personal: {
       name: 'Eddy Trotin',
       title: 'Ingénieur IA & Full Stack',
-      subtitle: 'Construction de systèmes prêts pour la production du concept à la mise en ligne — spécialisé en TypeScript, microservices et automatisation avec IA',
-      availability: 'Ouvert aux opportunités',
+      subtitle: 'De l\'idée au déploiement en production — Expert TypeScript, microservices et automatisation IA',
+      availability: 'Disponible pour nouveaux projets',
       tagline: {
-        prefix: 'Construire des Systèmes',
-        rotating: ['Évolutifs', 'Innovants', 'Prêts pour la Prod', 'Enterprise', 'Robustes', 'Modernes'],
+        prefix: 'Développer des Solutions',
+        rotating: ['Scalables', 'Innovantes', 'Robustes', 'Performantes', 'Modernes'],
         suffix: ''
       },
       stats: {
-        projectsCompleted: '100+',
-        projectsLabel: 'Projets Réalisés',
+        projectsCompleted: '40+',
+        projectsLabel: 'Projets Livrés',
         yearsExperience: '10+',
-        yearsLabel: 'Années d\'Expérience',
-        clientSatisfaction: '98%',
-        satisfactionLabel: 'Satisfaction Client'
+        yearsLabel: 'Ans d\'Expérience',
+        clientSatisfaction: '100%',
+        satisfactionLabel: 'Passionné'
       },
       bio: {
         heading: 'Ingénieur IA & Full Stack',
-        intro: 'Je construis des systèmes full-stack qui passent à l\'échelle. Ces 10 dernières années, j\'ai livré des **applications en production** pour des startups et **entreprises de classe mondiale**, en intervenant sur l\'ensemble de la stack—de l\'architecture des bases de données aux interfaces utilisateur. J\'écris du **code propre et maintenable**, convaincu que les meilleures solutions naissent d\'une compréhension à la fois technique et business.',
-        passion: 'Ce qui me motive, c\'est de voir les projets passer du **concept initial à la production**. J\'ai **dirigé des équipes de développement**, géré des budgets techniques et contribué à des **projets open source** comme node-i18n. Que ce soit pour mettre en place des applications structurées complexes avec pipelines CI/CD, intégrer des workflows IA avec N8N ou développer des extensions HubSpot personnalisées, je me concentre sur la livraison de systèmes qui fonctionnent vraiment **en production**.'
+        intro: 'Depuis 10 ans, j\'ai mis en production des systèmes pour des startups jusqu\'à des grands groupes internationaux, en maîtrisant toute la chaîne technique—de la conception BDD aux interfaces utilisateurs. Je vise du **code propre et maintenable** qui répond autant aux contraintes techniques qu\'aux **enjeux métier**.',
+        passion: 'Ce qui me passionne ? Transformer une **idée en produit fonctionnel**. Qu\'il s\'agisse de mettre en place des applications structurées complexes avec des pipelines CI/CD, d\'intégrer des workflows d\'IA avec N8N ou de créer des extensions HubSpot personnalisées, je me concentre sur la conception de solutions qui fonctionnent réellement pour les utilisateurs.'
       }
     },
 
@@ -169,10 +169,10 @@ export const translations = {
       email: 'dev.eddy.trotin@outlook.com',
       github: 'https://github.com/eddytrotin',
       linkedin: 'https://linkedin.com/in/eddy-trotin',
-      title: 'Parlons de Votre Prochain Projet',
-      description: 'Vous cherchez quelqu\'un qui maîtrise l\'ensemble du cycle de développement ? Je suis disponible pour du travail en freelance, des postes de lead technique ou des défis intéressants nécessitant une expertise full-stack approfondie.',
-      sendMessage: 'Envoyer un Message',
-      connectLinkedIn: 'Se Connecter sur LinkedIn'
+      title: 'Discutons de Votre Projet',
+      description: 'Besoin d\'un développeur qui maîtrise tout le cycle de vie d\'un projet ? Je suis ouvert aux missions freelance, postes de lead dev ou tout défi technique nécessitant une vraie expertise full-stack.',
+      sendMessage: 'Envoyer un message',
+      connectLinkedIn: 'LinkedIn'
     },
 
     // Réseaux sociaux
@@ -184,43 +184,43 @@ export const translations = {
 
     // Projets
     projects: {
-      title: 'Projets Phares',
-      viewProject: 'Voir le Projet',
+      title: 'Réalisations',
+      viewProject: 'Voir le projet',
       items: [
         {
           title: 'Extensions HubSpot CRM & Marketplace',
-          description: 'Direction du développement d\'extensions React personnalisées et d\'apps publiques pour HubSpot CRM, incluant workflows N8N et intégrations IA',
+          description: 'Lead dev sur des extensions React custom et apps publiques HubSpot CRM — workflows N8N et intégrations IA',
           tech: ['React', 'TypeScript', 'HubSpot API', 'N8N'],
           gradient: 'from-violet-600 via-purple-600 to-fuchsia-600',
           icon: Sparkles,
-          kpis: ['Lead Technique', 'Gestion Budgétaire', 'Apps Marketplace Publiques'],
+          kpis: ['Lead Technique', 'Gestion Budget', 'Apps Publiques'],
           link: '#'
         },
         {
-          title: 'Plateforme E-commerce Entreprise',
-          description: 'Développement full-stack TypeScript pour le groupe Kering et Auchan Retail—conception d\'architectures microservices pour environnements retail à fort trafic',
+          title: 'Plateformes E-commerce Groupe',
+          description: 'Dev full-stack TypeScript pour Kering et Auchan Retail — architectures microservices haute performance pour environnements retail à forte charge',
           tech: ['TypeScript', 'Node.js', 'PostgreSQL', 'Docker'],
           gradient: 'from-cyan-500 via-blue-600 to-indigo-600',
           icon: Zap,
-          kpis: ['Architecture Microservices', 'Haute Disponibilité', 'Échelle Entreprise'],
+          kpis: ['Microservices', 'Haute Dispo', 'Scale Entreprise'],
           link: '#'
         },
         {
-          title: 'Open-Paas Réseau Social Entreprise',
-          description: 'Contribution à la plateforme de collaboration de LINAGORA—implémentation du système i18n front et back, incluant des contributions à la librairie node-i18n',
+          title: 'Open-Paas ESN Collaborative',
+          description: 'Contributions à la plateforme LINAGORA — système i18n complet front/back + contributions à la lib node-i18n',
           tech: ['Node.js', 'Angular', 'MongoDB', 'i18n'],
           gradient: 'from-emerald-500 via-teal-600 to-cyan-600',
           icon: Cloud,
-          kpis: ['Contribution Open Source', 'Internationalisation Complète', 'Architecture Évolutive'],
+          kpis: ['Open Source', 'i18n Complet', 'Archi Scalable'],
           link: '#'
         },
         {
-          title: 'Suite de Gestion d\'Entreprise',
-          description: 'Solutions logicielles sur mesure pour clients variés—applications web, plateformes marketing digital, audits de sécurité et conseil en architecture',
+          title: 'Solutions Métier Sur-Mesure',
+          description: 'Applications métier custom — web apps, plateformes marketing, audits sécu et conseil archi technique',
           tech: ['Vue.js 3', 'Node.js', 'AWS', 'Tailwind CSS'],
           gradient: 'from-orange-500 via-red-600 to-pink-600',
           icon: Terminal,
-          kpis: ['Startup à Entreprise', '9 Ans d\'Activité', 'Cycle Complet de Projet'],
+          kpis: ['Startup → Grands Comptes', '9 Ans', 'End-to-End'],
           link: '#'
         }
       ]
@@ -228,32 +228,32 @@ export const translations = {
 
     // Section À Propos
     about: {
-      title: 'À Propos de Moi',
-      techStackTitle: 'Stack Technique & Expertise',
+      title: 'À Propos',
+      techStackTitle: 'Stack Technique & Expertises',
       highlights: [
-        '✓ Systèmes en production gérant des millions d\'utilisateurs pour clients entreprise',
-        '✓ Direction d\'équipes cross-fonctionnelles et gestion de budgets techniques',
-        '✓ Contributeur open source — code livré qui fonctionne en production',
-        '✓ Maîtrise du cycle complet : de l\'architecture au déploiement',
-        '✓ Solutions livrées pour startups et entreprises du Fortune 500'
+        '✓ Applications en production a fort volume de trafic',
+        '✓ Management d\'équipes tech et pilotage de budgets',
+        '✓ Contributeur open source — du code qui tourne en prod',
+        '✓ Maîtrise complète du cycle : archi → dev → déploiement',
+        '✓ Projets livrés de la startup au Fortune 500'
       ],
       techStack: [
         { icon: Globe, label: 'Frontend', items: 'React, Vue.js 3, Tailwind, Vite' },
         { icon: Server, label: 'Backend', items: 'Node.js, TypeScript, RESTful APIs, WebSocket' },
-        { icon: Database, label: 'Base de Données', items: 'PostgreSQL, MongoDB, Redis, Prisma' },
+        { icon: Database, label: 'Databases', items: 'PostgreSQL, MongoDB, Redis, Prisma' },
         { icon: Box, label: 'DevOps', items: 'Docker, AWS, CI/CD, Nginx, ELK' }
       ]
     },
 
     // Boutons
     buttons: {
-      viewMyWork: 'Voir Mon Travail',
-      getInTouch: 'Me Contacter'
+      viewMyWork: 'Voir mes projets',
+      getInTouch: 'Me contacter'
     },
 
     // Pied de page
     footer: {
-      copyright: '© 2025 Eddy Trotin. Conçu avec TypeScript & caféine.'
+      copyright: 'Eddy Trotin'
     }
   }
 };
