@@ -5,7 +5,7 @@ import { useLanguage } from '@/contexts/LanguageContext';
 export default function Contact() {
   const { t } = useLanguage();
   return (
-    <section id="contact" className="relative py-96 px-6">
+    <section id="contact" className="relative py-16 md:py-24 lg:py-32 px-6">
       <div className="max-w-4xl mx-auto text-center">
         <h2 className="text-5xl font-bold mb-8">
           <span className="bg-gradient-to-r from-cyan-400 via-purple-600 to-pink-600 bg-clip-text text-transparent">

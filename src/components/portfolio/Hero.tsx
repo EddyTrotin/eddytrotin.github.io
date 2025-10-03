@@ -10,16 +10,16 @@ interface HeroProps {
 export default function Hero({ onNavigate }: HeroProps) {
   const { t } = useLanguage();
   return (
-    <section id="home" className="relative min-h-screen flex items-center justify-center px-6">
-      <div className="relative z-10 max-w-6xl mx-auto text-center">
+    <section id="home" className="relative min-h-screen flex items-center justify-center px-4 sm:px-6">
+      <div className="relative z-10 max-w-6xl mx-auto text-center w-full">
         {/* Availability Badge */}
-        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 backdrop-blur-sm border border-white/10 mb-8 animate-fade-in">
+        <div className="inline-flex items-center gap-2 px-3 py-1.5 sm:px-4 sm:py-2 rounded-full bg-white/5 backdrop-blur-sm border border-white/10 mb-6 sm:mb-8 animate-fade-in">
           <div className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
-          <span className="text-sm text-gray-300">{t.personal.availability}</span>
+          <span className="text-xs sm:text-sm text-gray-300">{t.personal.availability}</span>
         </div>
 
         {/* Main Heading */}
-        <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-tight">
+        <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4 sm:mb-6 leading-tight px-2">
           <div className="animate-slide-up">
             {t.personal.tagline.prefix}
           </div>
@@ -43,7 +43,7 @@ export default function Hero({ onNavigate }: HeroProps) {
         </h1>
 
         <p 
-          className="text-xl md:text-2xl text-gray-400 mb-12 max-w-3xl mx-auto animate-slide-up" 
+          className="text-lg sm:text-xl md:text-2xl text-gray-400 mb-8 sm:mb-12 max-w-3xl mx-auto animate-slide-up px-2" 
           style={{ animationDelay: '0.3s' }}
         >
           {t.personal.subtitle}
@@ -51,22 +51,22 @@ export default function Hero({ onNavigate }: HeroProps) {
 
         {/* CTA Buttons */}
         <div 
-          className="flex flex-col sm:flex-row gap-4 justify-center mb-16 animate-slide-up" 
+          className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center mb-12 sm:mb-16 animate-slide-up px-4 sm:px-0" 
           style={{ animationDelay: '0.4s' }}
         >
           <button
             onClick={() => onNavigate('projects')}
-            className="group relative px-8 py-4 bg-gradient-to-r from-cyan-500 to-purple-600 rounded-full font-semibold overflow-hidden"
+            className="group relative px-6 py-3 sm:px-8 sm:py-4 bg-gradient-to-r from-cyan-500 to-purple-600 rounded-full font-semibold overflow-hidden text-sm sm:text-base"
           >
             <span className="relative z-10 flex items-center justify-center gap-2 cursor-pointer">
               {t.buttons.viewMyWork}
-              <ArrowRight className="group-hover:translate-x-1 transition-transform" size={20} />
+              <ArrowRight className="group-hover:translate-x-1 transition-transform" size={18} />
             </span>
             <div className="absolute inset-0 bg-gradient-to-r from-purple-600 to-pink-600 opacity-0 group-hover:opacity-100 transition-opacity" />
           </button>
           <button
             onClick={() => onNavigate('contact')}
-            className="px-8 py-4 bg-white/5 backdrop-blur-sm border border-white/10 rounded-full font-semibold hover:bg-white/10 transition-all cursor-pointer"
+            className="px-6 py-3 sm:px-8 sm:py-4 bg-white/5 backdrop-blur-sm border border-white/10 rounded-full font-semibold hover:bg-white/10 transition-all cursor-pointer text-sm sm:text-base"
           >
             {t.buttons.getInTouch}
           </button>
@@ -74,7 +74,7 @@ export default function Hero({ onNavigate }: HeroProps) {
 
         {/* Social Links */}
         <div 
-          className="flex gap-4 justify-center animate-slide-up" 
+          className="flex gap-3 sm:gap-4 justify-center animate-slide-up" 
           style={{ animationDelay: '0.5s' }}
         >
           {t.socials.map(({ icon: Icon, href, label }) => (
@@ -83,9 +83,9 @@ export default function Hero({ onNavigate }: HeroProps) {
               href={href}
               target="_blank"
               rel="noopener noreferrer"
-              className="group relative p-4 bg-white/5 backdrop-blur-sm border border-white/10 rounded-full hover:border-cyan-500/50 transition-all"
+              className="group relative p-3 sm:p-4 bg-white/5 backdrop-blur-sm border border-white/10 rounded-full hover:border-cyan-500/50 transition-all"
             >
-              <Icon size={24} className="group-hover:text-cyan-400 transition-colors" />
+              <Icon size={20} className="sm:w-6 sm:h-6 group-hover:text-cyan-400 transition-colors" />
               <span className="absolute -top-12 left-1/2 -translate-x-1/2 px-3 py-1 bg-black border border-white/10 rounded-lg text-sm opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
                 {label}
               </span>
