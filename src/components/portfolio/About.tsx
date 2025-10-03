@@ -1,0 +1,102 @@
+import React from 'react';
+import { LucideIcon } from 'lucide-react';
+
+interface TechStackItem {
+  icon: LucideIcon;
+  label: string;
+  items: string;
+}
+
+interface Stats {
+  projectsCompleted: string;
+  yearsExperience: string;
+  clientSatisfaction: string;
+}
+
+interface Bio {
+  intro: string;
+  passion: string;
+}
+
+interface AboutProps {
+  bio: Bio;
+  stats: Stats;
+  techStack: TechStackItem[];
+}
+
+export default function About({ bio, stats, techStack }: AboutProps) {
+  return (
+    <section id="about" className="relative py-32 px-6">
+      <div className="max-w-6xl mx-auto">
+        <h2 className="text-5xl font-bold mb-16 text-center">
+          <span className="bg-gradient-to-r from-cyan-400 to-purple-600 bg-clip-text text-transparent">
+            About Me
+          </span>
+        </h2>
+
+        <div className="grid md:grid-cols-3 gap-6">
+          {/* Main Bio Card */}
+          <div className="md:col-span-2 group relative bg-gradient-to-br from-white/5 to-white/[0.02] backdrop-blur-sm border border-white/10 rounded-3xl p-8 hover:border-cyan-500/50 transition-all overflow-hidden">
+            <div className="absolute inset-0 bg-gradient-to-br from-cyan-600/10 to-purple-600/10 opacity-0 group-hover:opacity-100 transition-opacity" />
+            <div className="relative z-10">
+              <h3 className="text-2xl font-bold mb-4">Full Stack Developer & Creative Technologist</h3>
+              <p className="text-gray-400 leading-relaxed mb-4">
+                {bio.intro}
+              </p>
+              <p className="text-gray-400 leading-relaxed">
+                {bio.passion}
+              </p>
+            </div>
+          </div>
+
+          {/* Stats Card */}
+          <div className="group relative bg-gradient-to-br from-white/5 to-white/[0.02] backdrop-blur-sm border border-white/10 rounded-3xl p-8 hover:border-purple-500/50 transition-all overflow-hidden">
+            <div className="absolute inset-0 bg-gradient-to-br from-purple-600/10 to-pink-600/10 opacity-0 group-hover:opacity-100 transition-opacity" />
+            <div className="relative z-10">
+              <div className="mb-6">
+                <div className="text-5xl font-bold bg-gradient-to-r from-cyan-400 to-purple-600 bg-clip-text text-transparent mb-2">
+                  {stats.projectsCompleted}
+                </div>
+                <div className="text-gray-400">Projects Completed</div>
+              </div>
+              <div className="mb-6">
+                <div className="text-5xl font-bold bg-gradient-to-r from-purple-400 to-pink-600 bg-clip-text text-transparent mb-2">
+                  {stats.yearsExperience}
+                </div>
+                <div className="text-gray-400">Years Experience</div>
+              </div>
+              <div>
+                <div className="text-5xl font-bold bg-gradient-to-r from-pink-400 to-orange-600 bg-clip-text text-transparent mb-2">
+                  {stats.clientSatisfaction}
+                </div>
+                <div className="text-gray-400">Client Satisfaction</div>
+              </div>
+            </div>
+          </div>
+
+          {/* Tech Stack Card */}
+          <div className="md:col-span-3 group relative bg-gradient-to-br from-white/5 to-white/[0.02] backdrop-blur-sm border border-white/10 rounded-3xl p-8 hover:border-cyan-500/50 transition-all overflow-hidden">
+            <div className="absolute inset-0 bg-gradient-to-br from-cyan-600/10 to-purple-600/10 opacity-0 group-hover:opacity-100 transition-opacity" />
+            <div className="relative z-10">
+              <h3 className="text-xl font-bold mb-6">Tech Stack & Expertise</h3>
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                {techStack.map((item, i) => (
+                  <div key={i} className="flex flex-col gap-2">
+                    <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-cyan-500/20 to-purple-600/20 flex items-center justify-center">
+                      <item.icon size={24} className="text-cyan-400" />
+                    </div>
+                    <div>
+                      <div className="font-semibold">{item.label}</div>
+                      <div className="text-sm text-gray-400">{item.items}</div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
