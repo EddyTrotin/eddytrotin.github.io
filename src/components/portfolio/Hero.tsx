@@ -1,44 +1,35 @@
 import React from 'react';
-import { ArrowRight, LucideIcon } from 'lucide-react';
-
-interface SocialLink {
-  icon: LucideIcon;
-  href: string;
-  label: string;
-}
+import { ArrowRight } from 'lucide-react';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 interface HeroProps {
-  tagline: {
-    prefix: string;
-    highlight: string;
-  };
-  subtitle: string;
-  availability: string;
-  socials: SocialLink[];
   onNavigate: (sectionId: string) => void;
 }
 
-export default function Hero({ tagline, subtitle, availability, socials, onNavigate }: HeroProps) {
+export default function Hero({ onNavigate }: HeroProps) {
+  const { t } = useLanguage();
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center px-6">
       <div className="relative z-10 max-w-6xl mx-auto text-center">
         {/* Availability Badge */}
         <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 backdrop-blur-sm border border-white/10 mb-8 animate-fade-in">
           <div className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
-          <span className="text-sm text-gray-300">{availability}</span>
+          <span className="text-sm text-gray-300">{t.personal.availability}</span>
         </div>
 
         {/* Main Heading */}
         <h1 className="text-6xl md:text-8xl font-bold mb-6 leading-tight">
           <span className="inline-block animate-slide-up">
-            {tagline.prefix}
+            {t.personal.tagline.prefix}
           </span>
           <br />
           <span 
-            className="bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 bg-clip-text text-transparent animate-gradient inline-block animate-slide-up" 
+            className="inline-block animate-slide-up" 
             style={{ animationDelay: '0.2s' }}
           >
-            {tagline.highlight}
+            <span className="bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 bg-clip-text text-transparent animate-gradient">
+              {t.personal.tagline.highlight}
+            </span>
           </span>
         </h1>
 
@@ -46,7 +37,7 @@ export default function Hero({ tagline, subtitle, availability, socials, onNavig
           className="text-xl md:text-2xl text-gray-400 mb-12 max-w-3xl mx-auto animate-slide-up" 
           style={{ animationDelay: '0.3s' }}
         >
-          {subtitle}
+          {t.personal.subtitle}
         </p>
 
         {/* CTA Buttons */}
@@ -59,7 +50,7 @@ export default function Hero({ tagline, subtitle, availability, socials, onNavig
             className="group relative px-8 py-4 bg-gradient-to-r from-cyan-500 to-purple-600 rounded-full font-semibold overflow-hidden"
           >
             <span className="relative z-10 flex items-center justify-center gap-2 cursor-pointer">
-              View My Work
+              {t.buttons.viewMyWork}
               <ArrowRight className="group-hover:translate-x-1 transition-transform" size={20} />
             </span>
             <div className="absolute inset-0 bg-gradient-to-r from-purple-600 to-pink-600 opacity-0 group-hover:opacity-100 transition-opacity" />
@@ -68,7 +59,7 @@ export default function Hero({ tagline, subtitle, availability, socials, onNavig
             onClick={() => onNavigate('contact')}
             className="px-8 py-4 bg-white/5 backdrop-blur-sm border border-white/10 rounded-full font-semibold hover:bg-white/10 transition-all cursor-pointer"
           >
-            Get In Touch
+            {t.buttons.getInTouch}
           </button>
         </div>
 
@@ -77,7 +68,7 @@ export default function Hero({ tagline, subtitle, availability, socials, onNavig
           className="flex gap-4 justify-center animate-slide-up" 
           style={{ animationDelay: '0.5s' }}
         >
-          {socials.map(({ icon: Icon, href, label }) => (
+          {t.socials.map(({ icon: Icon, href, label }) => (
             <a
               key={label}
               href={href}

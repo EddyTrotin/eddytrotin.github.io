@@ -1,32 +1,20 @@
 import React from 'react';
-import { ExternalLink, TrendingUp, LucideIcon } from 'lucide-react';
+import { ExternalLink, TrendingUp } from 'lucide-react';
+import { useLanguage } from '@/contexts/LanguageContext';
 
-interface Project {
-  title: string;
-  description: string;
-  tech: string[];
-  gradient: string;
-  icon: LucideIcon;
-  kpis: string[];
-  link?: string;
-}
-
-interface ProjectsProps {
-  projects: Project[];
-}
-
-export default function Projects({ projects }: ProjectsProps) {
+export default function Projects() {
+  const { t } = useLanguage();
   return (
     <section id="projects" className="relative py-32 px-6">
       <div className="max-w-6xl mx-auto">
         <h2 className="text-5xl font-bold mb-16 text-center">
           <span className="bg-gradient-to-r from-cyan-400 to-purple-600 bg-clip-text text-transparent">
-            Featured Projects
+            {t.projects.title}
           </span>
         </h2>
 
         <div className="grid md:grid-cols-2 gap-8">
-          {projects.map((project, index) => (
+          {t.projects.items.map((project, index) => (
             <div
               key={index}
               className="group relative bg-gradient-to-br from-white/5 to-white/[0.02] backdrop-blur-sm border border-white/10 rounded-3xl overflow-hidden hover:border-white/20 transition-all"
@@ -91,7 +79,7 @@ export default function Projects({ projects }: ProjectsProps) {
 
                 {/* Link */}
                 <button className="flex items-center gap-2 text-cyan-400 group-hover:gap-4 transition-all cursor-pointer">
-                  View Project
+                  {t.projects.viewProject}
                   <ExternalLink size={16} />
                 </button>
               </div>

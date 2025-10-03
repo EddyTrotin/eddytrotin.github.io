@@ -1,6 +1,6 @@
 "use client";
 import React, { useState, useEffect } from 'react';
-import { portfolioConfig } from '@/config/portfolio.config';
+import { LanguageProvider, useLanguage } from '@/contexts/LanguageContext';
 import BackgroundEffects from './portfolio/BackgroundEffects';
 import Navigation from './portfolio/Navigation';
 import Hero from './portfolio/Hero';
@@ -14,7 +14,7 @@ export default function Portfolio() {
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = portfolioConfig.navigation.sections;
+      const sections = ['home', 'about', 'projects', 'contact'];
       
       // Check if we're near the bottom of the page (within 100px)
       const isNearBottom = window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 100;
@@ -70,40 +70,44 @@ export default function Portfolio() {
   };
 
   return (
+    <LanguageProvider>
+      <PortfolioContent 
+        activeSection={activeSection}
+        scrollToSection={scrollToSection}
+      />
+    </LanguageProvider>
+  );
+}
+
+function PortfolioContent({ 
+  activeSection, 
+  scrollToSection 
+}: { 
+  activeSection: string; 
+  scrollToSection: (id: string) => void;
+}) {
+  const { isTransitioning } = useLanguage();
+
+  return (
     <div className="bg-black text-white min-h-screen overflow-hidden">
       <BackgroundEffects />
       
       <Navigation 
         activeSection={activeSection}
         onNavigate={scrollToSection}
-        sections={portfolioConfig.navigation.sections}
-        brandName={portfolioConfig.personal.name}
       />
 
-      <Hero 
-        tagline={portfolioConfig.personal.tagline}
-        subtitle={portfolioConfig.personal.subtitle}
-        availability={portfolioConfig.personal.availability}
-        socials={portfolioConfig.socials}
-        onNavigate={scrollToSection}
-      />
+      <div className={`transition-opacity duration-300 ${isTransitioning ? 'opacity-0' : 'opacity-100'}`}>
+        <Hero onNavigate={scrollToSection} />
 
-      <About 
-        bio={portfolioConfig.personal.bio}
-        stats={portfolioConfig.personal.stats}
-        techStack={portfolioConfig.techStack}
-      />
+        <About />
 
-      <Projects projects={portfolioConfig.projects} />
+        <Projects />
 
-      <Contact 
-        title={portfolioConfig.contact.title}
-        description={portfolioConfig.contact.description}
-        email={portfolioConfig.contact.email}
-        linkedin={portfolioConfig.contact.linkedin}
-      />
+        <Contact />
 
-      <Footer copyright={portfolioConfig.footer.copyright} />
+        <Footer />
+      </div>
     </div>
   );
 }

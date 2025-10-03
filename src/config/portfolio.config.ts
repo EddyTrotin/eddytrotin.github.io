@@ -9,7 +9,7 @@ export const portfolioConfig = {
     availability: 'Available for new projects',
     tagline: {
       prefix: 'Crafting Digital',
-      highlight: 'Experiences'
+      highlight: 'Solutions'
     },
     stats: {
       projectsCompleted: '50+',
