@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
 
 // Helper function to render text with bold markers (**text**)
@@ -13,8 +13,90 @@ const renderTextWithBold = (text: string) => {
   });
 };
 
+// Custom hook for count-up animation
+const useCountUp = (end: number, duration: number = 2000, shouldStart: boolean = false) => {
+  const [count, setCount] = useState(0);
+  const [hasAnimated, setHasAnimated] = useState(false);
+
+  useEffect(() => {
+    if (!shouldStart || hasAnimated) return;
+
+    setHasAnimated(true);
+    let startTime: number | null = null;
+    const startValue = 0;
+
+    const animate = (currentTime: number) => {
+      if (!startTime) startTime = currentTime;
+      const progress = Math.min((currentTime - startTime) / duration, 1);
+      
+      // Easing function for smooth animation (easeOutExpo)
+      const easedProgress = progress === 1 ? 1 : 1 - Math.pow(2, -10 * progress);
+      
+      const currentValue = easedProgress * (end - startValue) + startValue;
+      setCount(progress === 1 ? end : Math.round(currentValue));
+
+      if (progress < 1) {
+        requestAnimationFrame(animate);
+      }
+    };
+
+    requestAnimationFrame(animate);
+  }, [end, duration, shouldStart, hasAnimated]);
+
+  return count;
+};
+
+// Helper to parse stat values like "40+", "10+", "100%"
+const parseStatValue = (stat: string): { value: number; suffix: string } => {
+  const match = stat.match(/^(\d+)(.*)$/);
+  if (match) {
+    return {
+      value: parseInt(match[1], 10),
+      suffix: match[2] || ''
+    };
+  }
+  return { value: 0, suffix: '' };
+};
+
 export default function About() {
   const { t } = useLanguage();
+  const statsRef = useRef<HTMLDivElement>(null);
+  const [isVisible, setIsVisible] = useState(false);
+
+  // Intersection Observer to detect when stats card is visible
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+        }
+      },
+      { threshold: 0.3 } // Trigger when 30% of the element is visible
+    );
+
+    const currentRef = statsRef.current;
+    
+    if (currentRef) {
+      observer.observe(currentRef);
+    }
+
+    return () => {
+      if (currentRef) {
+        observer.unobserve(currentRef);
+      }
+    };
+  }, []);
+
+  // Parse stat values
+  const projectsStat = parseStatValue(t.personal.stats.projectsCompleted);
+  const yearsStat = parseStatValue(t.personal.stats.yearsExperience);
+  const satisfactionStat = parseStatValue(t.personal.stats.clientSatisfaction);
+
+  // Animated counts
+  const projectsCount = useCountUp(projectsStat.value, 2000, isVisible);
+  const yearsCount = useCountUp(yearsStat.value, 2000, isVisible);
+  const satisfactionCount = useCountUp(satisfactionStat.value, 2000, isVisible);
+
   return (
     <section id="about" className="relative py-32 px-6">
       <div className="max-w-6xl mx-auto">
@@ -40,24 +122,27 @@ export default function About() {
           </div>
 
           {/* Stats Card */}
-          <div className="group relative bg-gradient-to-br from-white/5 to-white/[0.02] backdrop-blur-sm border border-white/10 rounded-3xl p-8 hover:border-purple-500/50 transition-all overflow-hidden">
+          <div 
+            ref={statsRef}
+            className="group relative bg-gradient-to-br from-white/5 to-white/[0.02] backdrop-blur-sm border border-white/10 rounded-3xl p-8 hover:border-purple-500/50 transition-all overflow-hidden"
+          >
             <div className="absolute inset-0 bg-gradient-to-br from-purple-600/10 to-pink-600/10 opacity-0 group-hover:opacity-100 transition-opacity" />
             <div className="relative z-10">
               <div className="mb-6">
                 <div className="text-5xl font-bold bg-gradient-to-r from-cyan-400 to-purple-600 bg-clip-text text-transparent mb-2">
-                  {t.personal.stats.projectsCompleted}
+                  {projectsCount}{projectsStat.suffix}
                 </div>
                 <div className="text-gray-400">{t.personal.stats.projectsLabel}</div>
               </div>
               <div className="mb-6">
                 <div className="text-5xl font-bold bg-gradient-to-r from-purple-400 to-pink-600 bg-clip-text text-transparent mb-2">
-                  {t.personal.stats.yearsExperience}
+                  {yearsCount}{yearsStat.suffix}
                 </div>
                 <div className="text-gray-400">{t.personal.stats.yearsLabel}</div>
               </div>
               <div>
                 <div className="text-5xl font-bold bg-gradient-to-r from-pink-400 to-orange-600 bg-clip-text text-transparent mb-2">
-                  {t.personal.stats.clientSatisfaction}
+                  {satisfactionCount}{satisfactionStat.suffix}
                 </div>
                 <div className="text-gray-400">{t.personal.stats.satisfactionLabel}</div>
               </div>
