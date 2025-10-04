@@ -10,7 +10,7 @@ export const portfolioConfig = {
     tagline: {
       prefix: 'Building',
       rotating: ['Scalable', 'Innovative', 'Production-Ready', 'Enterprise-Grade', 'Robust', 'Modern'],
-      suffix: 'Systems'
+      suffix: 'Solutions'
     },
     stats: {
       projectsCompleted: '40+',

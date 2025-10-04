@@ -6,12 +6,12 @@ export const translations = {
     personal: {
       name: 'Eddy Trotin',
       title: 'AI & Full Stack Engineer',
-      subtitle: 'Building production-ready systems from concept to production — specializing in TypeScript, microservices, and AI-powered automation',
+      subtitle: 'Building production-ready solutions from concept to production — specializing in TypeScript, microservices, and AI-powered automation',
       availability: 'Open to new opportunities',
       tagline: {
         prefix: 'Building',
         rotating: ['Scalable', 'Innovative', 'Production-Ready', 'Robust', 'Modern'],
-        suffix: 'Systems'
+        suffix: 'Solutions'
       },
       stats: {
         projectsCompleted: '40+',
@@ -23,7 +23,7 @@ export const translations = {
       },
       bio: {
         heading: 'AI & Full Stack Engineer',
-        intro: 'I build full-stack systems that scale. Over the past 10 years, I\'ve shipped production applications for startups to world-class companies, working across the entire stack—from database architecture to user interfaces. I write **clean, maintainable code** and believe the best solutions come from understanding both the technical requirements and the **business context**.',
+        intro: 'I build full-stack apps that scale. Over the past 10 years, I\'ve shipped production applications for startups to world-class companies, working across the entire stack—from database architecture to user interfaces. I write **clean, maintainable code** and believe the best solutions come from understanding both the technical requirements and the **business context**.',
         passion: 'What drives me is seeing projects go from initial concept to production. I\'ve led development teams, managed technical budgets, and contributed to **open-source projects** like node-i18n. Whether it\'s setting up complex structured app with CI/CD pipelines, integrating AI workflows with N8N, or building custom HubSpot extensions, I focus on delivering systems that actually **work in the real world**.'
       }
     },

@@ -19,7 +19,7 @@ export default function Projects() {
               key={index}
               className="group relative bg-gradient-to-br from-white/5 to-white/[0.02] backdrop-blur-sm border border-white/10 rounded-3xl overflow-hidden hover:border-white/20 transition-all"
               style={{
-                transform: 'perspective(1000px) rotateX(0deg)',
+                transform: 'perspective(600px) rotateX(0deg)',
                 transition: 'all 0.5s ease'
               }}
               onMouseMove={(e) => {
@@ -28,12 +28,12 @@ export default function Projects() {
                 const y = e.clientY - rect.top;
                 const centerX = rect.width / 2;
                 const centerY = rect.height / 2;
-                const rotateX = (y - centerY) / 50;
-                const rotateY = (centerX - x) / 50;
-                e.currentTarget.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.01)`;
+                const rotateX = (y - centerY) / 30;
+                const rotateY = (centerX - x) / 30;
+                e.currentTarget.style.transform = `perspective(600px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(0.95)`;
               }}
               onMouseLeave={(e) => {
-                e.currentTarget.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) scale(1)';
+                e.currentTarget.style.transform = 'perspective(600px) rotateX(0deg) rotateY(0deg) scale(1)';
               }}
             >
               {/* Gradient Header */}

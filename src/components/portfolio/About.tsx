@@ -14,7 +14,7 @@ const renderTextWithBold = (text: string) => {
 };
 
 // Custom hook for count-up animation
-const useCountUp = (end: number, duration: number = 2000, shouldStart: boolean = false) => {
+const useCountUp = (end: number, duration: number = 4000, shouldStart: boolean = false) => {
   const [count, setCount] = useState(0);
   const [hasAnimated, setHasAnimated] = useState(false);
 
@@ -29,8 +29,8 @@ const useCountUp = (end: number, duration: number = 2000, shouldStart: boolean =
       if (!startTime) startTime = currentTime;
       const progress = Math.min((currentTime - startTime) / duration, 1);
       
-      // Easing function for smooth animation (easeOutExpo)
-      const easedProgress = progress === 1 ? 1 : 1 - Math.pow(2, -10 * progress);
+      // Easing function for smooth animation (easeOutCubic) - smoother end than expo
+      const easedProgress = 1 - Math.pow(1 - progress, 3);
       
       const currentValue = easedProgress * (end - startValue) + startValue;
       setCount(progress === 1 ? end : Math.round(currentValue));
@@ -71,7 +71,7 @@ export default function About() {
           setIsVisible(true);
         }
       },
-      { threshold: 0.3 } // Trigger when 30% of the element is visible
+      { threshold: 1.0 } // Trigger when 30% of the element is visible
     );
 
     const currentRef = statsRef.current;
@@ -93,9 +93,9 @@ export default function About() {
   const satisfactionStat = parseStatValue(t.personal.stats.clientSatisfaction);
 
   // Animated counts
-  const projectsCount = useCountUp(projectsStat.value, 2000, isVisible);
-  const yearsCount = useCountUp(yearsStat.value, 2000, isVisible);
-  const satisfactionCount = useCountUp(satisfactionStat.value, 2000, isVisible);
+  const projectsCount = useCountUp(projectsStat.value, 4000, isVisible);
+  const yearsCount = useCountUp(yearsStat.value, 4000, isVisible);
+  const satisfactionCount = useCountUp(satisfactionStat.value, 4000, isVisible);
 
   return (
     <section id="about" className="relative py-32 px-6">

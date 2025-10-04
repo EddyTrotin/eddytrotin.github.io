@@ -16,11 +16,11 @@ export default function BackgroundEffects() {
   useEffect(() => {
     // Generate particle positions once
     particlesRef.current = [...Array(60)].map(() => ({
-      size: Math.random() * 2 + 0.5,
+      size: Math.random() * 3 + 1,
       baseX: Math.random() * 100,
       baseY: Math.random() * 100,
       opacity: Math.random() * 0.4 + 0.2,
-      duration: Math.random() * 25 + 20,
+      duration: Math.random() * 20 + 15,
       delay: Math.random() * 10
     }));
   }, []);
@@ -105,10 +105,10 @@ export default function BackgroundEffects() {
             transform: translate(0, 0);
           }
           33% {
-            transform: translate(8px, -8px);
+            transform: translate(25px, -25px);
           }
           66% {
-            transform: translate(-8px, 8px);
+            transform: translate(-25px, 25px);
           }
         }
 
@@ -117,10 +117,10 @@ export default function BackgroundEffects() {
             transform: translate(0, 0);
           }
           33% {
-            transform: translate(-8px, -8px);
+            transform: translate(-25px, -25px);
           }
           66% {
-            transform: translate(8px, 8px);
+            transform: translate(25px, 25px);
           }
         }
       `}</style>
