@@ -90,7 +90,7 @@ function PortfolioContent({
   const { isTransitioning } = useLanguage();
 
   return (
-    <div className="bg-black text-white min-h-screen overflow-hidden">
+    <div className="bg-black text-white min-h-screen overflow-x-hidden">
       <BackgroundEffects />
       
       <Navigation 
