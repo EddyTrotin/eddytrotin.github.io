@@ -41,7 +41,7 @@ export const translations = {
       email: 'dev.eddy.trotin@outlook.com',
       github: 'https://github.com/eddytrotin',
       linkedin: 'https://linkedin.com/in/eddy-trotin',
-      title: 'Let\'s Talk About Your Next Project',
+      title: 'Let\'s Talk About Your Next Success',
       description: 'Looking for someone who can handle the full development lifecycle? I\'m available for contract work, technical leadership roles, or interesting challenges that require deep full-stack expertise.',
       sendMessage: 'Send Message',
       connectLinkedIn: 'Connect on LinkedIn'
@@ -126,6 +126,21 @@ export const translations = {
     // Footer
     footer: {
       copyright: 'Eddy Trotin'
+    },
+
+    // Clients
+    clients: {
+      title: 'Trusted By',
+      items: [
+        { name: 'HubSpot', url: 'https://www.hubspot.com', logo: 'hubspot.png' },
+        { name: 'Kering', url: 'https://www.kering.com', logo: 'kering.png' },
+        { name: 'Auchan', url: 'https://www.auchan.fr', logo: 'auchan.png' },
+        { name: 'LINAGORA', url: 'https://www.linagora.com', logo: 'linagora.png' },
+        { name: 'Amazon AWS', url: 'https://aws.amazon.com', logo: 'aws.png' },
+        { name: 'Microsoft', url: 'https://www.microsoft.com', logo: 'microsoft.png' },
+        { name: 'MongoDB', url: 'https://www.mongodb.com', logo: 'mongodb.png' },
+        { name: 'PostgreSQL', url: 'https://www.postgresql.org', logo: 'postgresql.png' }
+      ]
     }
   },
 
@@ -254,6 +269,21 @@ export const translations = {
     // Pied de page
     footer: {
       copyright: 'Eddy Trotin'
+    },
+
+    // Clients
+    clients: {
+      title: 'Clients de Confiance',
+      items: [
+        { name: 'HubSpot', url: 'https://www.hubspot.com', logo: 'hubspot.png' },
+        { name: 'Kering', url: 'https://www.kering.com', logo: 'kering.png' },
+        { name: 'Auchan', url: 'https://www.auchan.fr', logo: 'auchan.png' },
+        { name: 'LINAGORA', url: 'https://www.linagora.com', logo: 'linagora.png' },
+        { name: 'Amazon AWS', url: 'https://aws.amazon.com', logo: 'aws.png' },
+        { name: 'Microsoft', url: 'https://www.microsoft.com', logo: 'microsoft.png' },
+        { name: 'MongoDB', url: 'https://www.mongodb.com', logo: 'mongodb.png' },
+        { name: 'PostgreSQL', url: 'https://www.postgresql.org', logo: 'postgresql.png' }
+      ]
     }
   }
 };

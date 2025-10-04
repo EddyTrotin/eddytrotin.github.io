@@ -28,7 +28,7 @@ export const portfolioConfig = {
     email: 'dev.eddy.trotin@outlook.com',
     github: 'https://github.com/eddytrotin',
     linkedin: 'https://linkedin.com/in/eddy-trotin',
-    title: 'Let\'s Talk About Your Next Project',
+    title: 'Let\'s Talk About Your Next Success',
     description: 'Looking for someone who can handle the full development lifecycle? I\'m available for contract work, technical leadership roles, or interesting challenges that require deep full-stack expertise.'
   },
 

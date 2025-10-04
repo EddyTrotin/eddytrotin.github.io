@@ -5,6 +5,7 @@ import BackgroundEffects from './portfolio/BackgroundEffects';
 import Navigation from './portfolio/Navigation';
 import Hero from './portfolio/Hero';
 import About from './portfolio/About';
+import ClientLogos from './portfolio/ClientLogos';
 import Projects from './portfolio/Projects';
 import Contact from './portfolio/Contact';
 import Footer from './portfolio/Footer';
@@ -101,6 +102,8 @@ function PortfolioContent({
         <Hero onNavigate={scrollToSection} />
 
         <About />
+
+        {/* <ClientLogos /> */}
 
         <Projects />
 
